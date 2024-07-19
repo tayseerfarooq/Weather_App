@@ -1,0 +1,41 @@
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Virtual environment
+venv/
+.env/
+*.env
+
+# Django specific
+db.sqlite3
+*.log
+local_settings.py
+media/
+staticfiles/
+*.pot
+*.mo
+
+# Heroku
+.heroku/
+*.heroku.yml
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# MacOS Finder settings
+.DS_Store
+
+# Windows specific
+Thumbs.db
+Desktop.ini
