@@ -135,6 +135,10 @@ DATABASES = {
     'default': dj_database_url.config(default='sqlite:///db.sqlite3')
 }
 
-ALLOWED_HOSTS = ['weather-project.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['weather-project-987606e9759e.herokuapp.com', 'localhost', '127.0.0.1']
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
+
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost').split(',')
