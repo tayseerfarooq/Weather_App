@@ -5,12 +5,9 @@ dj-database-url==2.2.0
 Django==5.0.7
 gunicorn==22.0.0
 idna==3.7
-numpy==1.24.3
+numpy==2.0.0
 packaging==24.1
 requests==2.32.3
 sqlparse==0.5.1
 typing_extensions==4.12.2
 urllib3==2.2.2
-pip==23.2.1
-setuptools==67.8.0
-numpy==1.23.0
