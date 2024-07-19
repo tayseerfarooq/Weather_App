@@ -16,10 +16,3 @@
 - **Weatherstack API**: For fetching real-time weather data.
 - **Heroku**: Platform for deploying the web application.
 
-## Getting Started
-
-### Prerequisites
-
-- Python 3.x
-- Django
-- `requests` library
