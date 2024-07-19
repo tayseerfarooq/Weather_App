@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding-top: 50px;
+        }
+        .weather-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .weather-icon {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="weather-container">
+            <h1 class="text-center">Weather App</h1>
+            <form method="post" class="mt-4">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ form.city.label_tag }}
+                    {{ form.city }}
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Get Weather</button>
+            </form>
+            {% if weather %}
+                <div class="mt-4">
+                    {% if weather.error %}
+                        <div class="alert alert-danger">{{ weather.error }}</div>
+                    {% else %}
+                        <div class="text-center">
+                            <h2>Weather in {{ weather.city }}</h2>
+                            <p><img src="{{ weather.icon }}" alt="Weather icon" class="weather-icon"></p>
+                            <p>Temperature: {{ weather.temperature }}°C</p>
+                            <p>Description: {{ weather.description }}</p>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
